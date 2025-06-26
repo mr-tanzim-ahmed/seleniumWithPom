@@ -28,6 +28,7 @@ public abstract class Page {
 
     public abstract void setWait(By locator);
 
+    //Send a class through parameter , return type page object
     public <T extends BasePage> T getPage(Class<T> pageClass){
         try {
             return pageClass.getDeclaredConstructor(WebDriver.class).newInstance(driver);
