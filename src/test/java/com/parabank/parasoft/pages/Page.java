@@ -14,10 +14,11 @@ public abstract class Page {
     WebDriver driver;
     WebDriverWait wait;
 
-    public Page(WebDriver driver){
+    public Page(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(ParaBankUtil.WAIT_TIME));
     }
+
     public abstract WebElement getWebElement(By locator);
 
     public abstract List<WebElement> getWebElements(By locator);
@@ -28,8 +29,9 @@ public abstract class Page {
 
     public abstract void setWait(By locator);
 
+    public abstract String getPageUrl();
     //Send a class through parameter , return type page object
-    public <T extends BasePage> T getPage(Class<T> pageClass){
+    public <T extends BasePage> T goTo(Class<T> pageClass) {
         try {
             return pageClass.getDeclaredConstructor(WebDriver.class).newInstance(driver);
         } catch (InvocationTargetException e) {

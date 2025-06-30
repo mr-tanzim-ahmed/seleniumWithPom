@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
-public class BasePage extends Page{
+public class BasePage extends Page {
 
     public BasePage(WebDriver driver) {
         super(driver);
@@ -17,10 +17,10 @@ public class BasePage extends Page{
     @Override
     public WebElement getWebElement(By locator) {
         WebElement element = null;
-        try{
+        try {
             element = driver.findElement(locator);
-        }catch (Exception e){
-            System.out.println("Element not found: "+locator);
+        } catch (Exception e) {
+            System.out.println("Element not found: " + locator);
         }
         return element;
     }
@@ -28,10 +28,10 @@ public class BasePage extends Page{
     @Override
     public List<WebElement> getWebElements(By locator) {
         List<WebElement> elements = null;
-        try{
+        try {
             elements = driver.findElements(locator);
-        }catch (Exception e){
-            System.out.printf("Element not found: "+locator);
+        } catch (Exception e) {
+            System.out.printf("Element not found: " + locator);
         }
         return driver.findElements(locator);
     }
@@ -43,7 +43,10 @@ public class BasePage extends Page{
 
     @Override
     public void clickElement(By locator) {
-       getWebElement(locator).click();
+        getWebElement(locator).click();
+    }
+    public String getPageUrl(){
+        return driver.getCurrentUrl();
     }
 
     @Override
