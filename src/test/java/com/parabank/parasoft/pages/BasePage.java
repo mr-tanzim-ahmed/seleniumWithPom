@@ -33,7 +33,7 @@ public class BasePage extends Page {
         } catch (Exception e) {
             System.out.printf("Element not found: " + locator);
         }
-        return driver.findElements(locator);
+        return elements;
     }
 
     @Override
@@ -43,9 +43,11 @@ public class BasePage extends Page {
 
     @Override
     public void clickElement(By locator) {
+        setWait(locator);
         getWebElement(locator).click();
     }
-    public String getPageUrl(){
+
+    public String getPageUrl() {
         return driver.getCurrentUrl();
     }
 

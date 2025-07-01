@@ -1,5 +1,6 @@
 package com.parabank.parasoft.pages;
 
+import com.parabank.parasoft.util.ParaBankUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -7,15 +8,14 @@ public class LoginPage extends BasePage {
     public LoginPage(WebDriver driver) {
         super(driver);
     }
-
     //After fillup the user name , it will stay this page
-    public LoginPage fullUserName(String userName) {
+    public LoginPage fillUserName(String userName) {
         getWebElement(By.id("username")).sendKeys(userName);
         return this;
     }
 
     //Same as user name,
-    public LoginPage fullPassword(String password) {
+    public LoginPage fillPassword(String password) {
         getWebElement(By.name("password")).sendKeys(password);
         return this;
     }
@@ -27,16 +27,17 @@ public class LoginPage extends BasePage {
     }
     //Error message shows ,after clicking the login button
     public LoginPage clickLoginButtonAndStay(){
-        clickElement(By.cssSelector(".error"));
+        clickElement(By.xpath("//input[@value='Log In']"));
         return  this;
     }
 
-    public CustomerLookUpPage clickForgotPassword() {
+    public CustomerLookupPage clickForgotPassword() {
         clickElement(By.cssSelector("a[href='lookup.htm']"));
-        return goTo(CustomerLookUpPage.class);
+        return goTo(CustomerLookupPage.class);
     }
 
     public RegisterPage clickRegister() {
+        ParaBankUtil.waitForDomStable();
         clickElement(By.cssSelector("a[href='register.htm']"));
         return goTo(RegisterPage.class);
     }
@@ -50,6 +51,9 @@ public class LoginPage extends BasePage {
     public boolean isLogIn() {
         return getWebElements(By.cssSelector("a[href='logout.htm']")).size() > 0;
     }
-
+    //Checking error message 
+    public boolean hasLoginError(){
+        return getWebElements(By.cssSelector("p.error")).size() > 0 ;
+    }
 
 }

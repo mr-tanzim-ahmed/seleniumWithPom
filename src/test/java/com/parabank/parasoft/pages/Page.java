@@ -16,7 +16,7 @@ public abstract class Page {
 
     public Page(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(ParaBankUtil.WAIT_TIME));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(ParaBankUtil.WAIT_TIME));
     }
 
     public abstract WebElement getWebElement(By locator);
