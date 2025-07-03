@@ -22,6 +22,8 @@ public abstract class Page {
     public abstract WebElement getWebElement(By locator);
 
     public abstract List<WebElement> getWebElements(By locator);
+    public  abstract  void fillUpTheBox(By locator, String text);
+
 
     public abstract String getElementText(By locator);
 

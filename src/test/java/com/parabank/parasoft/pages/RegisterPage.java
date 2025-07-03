@@ -10,4 +10,8 @@ public class RegisterPage extends BasePage {
     public boolean hasRegistratioForm(){
         return getWebElements(By.id("customerForm")).size() > 0;
     }
+    public RegisterPage fillFirstName(String firstName){
+        fillUpTheBox(By.id("customer.firstName"),firstName);
+        return  this;
+    }
 }

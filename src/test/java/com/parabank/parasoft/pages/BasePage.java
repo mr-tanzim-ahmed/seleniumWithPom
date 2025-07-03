@@ -3,7 +3,6 @@ package com.parabank.parasoft.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
@@ -37,9 +36,15 @@ public class BasePage extends Page {
     }
 
     @Override
+    public void fillUpTheBox(By locator, String text) {
+        getWebElement(locator).sendKeys(text);
+    }
+
+    @Override
     public String getElementText(By locator) {
         return getWebElement(locator).getText();
     }
+
 
     @Override
     public void clickElement(By locator) {

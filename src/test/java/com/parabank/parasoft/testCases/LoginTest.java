@@ -7,7 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTest {
-    private static final Logger log = LoggerFactory.getLogger(LoginTest.class);
+    //private static final Logger log = LoggerFactory.getLogger(LoginTest.class);
     @Test
     public void checkLoginPage(){
         LoginPage loginPage = page.goTo(LoginPage.class);

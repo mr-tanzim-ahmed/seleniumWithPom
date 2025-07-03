@@ -10,7 +10,7 @@ public class LoginPage extends BasePage {
     }
     //After fillup the user name , it will stay this page
     public LoginPage fillUserName(String userName) {
-        getWebElement(By.id("username")).sendKeys(userName);
+        getWebElement(By.xpath("//input[@name='username']")).sendKeys(userName);
         return this;
     }
 
@@ -32,13 +32,13 @@ public class LoginPage extends BasePage {
     }
 
     public CustomerLookupPage clickForgotPassword() {
-        clickElement(By.cssSelector("a[href='lookup.htm']"));
+        clickElement(By.xpath("//a[normalize-space()='Forgot login info?']"));
         return goTo(CustomerLookupPage.class);
     }
 
     public RegisterPage clickRegister() {
         ParaBankUtil.waitForDomStable();
-        clickElement(By.cssSelector("a[href='register.htm']"));
+        clickElement(By.xpath("//a[normalize-space()='Register']"));
         return goTo(RegisterPage.class);
     }
 

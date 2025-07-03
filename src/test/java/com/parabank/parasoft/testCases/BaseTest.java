@@ -20,6 +20,7 @@ public class BaseTest {
         driver.manage().window().maximize();
         driver.get("https://parabank.parasoft.com/parabank/index.htm");
         driver.manage().timeouts().implicitlyWait(ParaBankUtil.WAIT_TIME, TimeUnit.SECONDS);
+        //By using BasePage , we can access "BasePage" and parent "Page" elements
         page = new BasePage(driver);
     }
 
