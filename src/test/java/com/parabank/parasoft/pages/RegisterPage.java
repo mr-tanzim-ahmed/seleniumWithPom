@@ -11,7 +11,7 @@ public class RegisterPage extends BasePage {
         return getWebElements(By.id("customerForm")).size() > 0;
     }
     public RegisterPage fillFirstName(String firstName){
-        fillUpTheBox(By.id("customer.firstName"),firstName);
+        setInputText(By.id("customer.firstName"),firstName);
         return  this;
     }
 }

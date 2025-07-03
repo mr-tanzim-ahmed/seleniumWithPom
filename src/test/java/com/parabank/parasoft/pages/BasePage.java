@@ -36,10 +36,13 @@ public class BasePage extends Page {
     }
 
     @Override
-    public void fillUpTheBox(By locator, String text) {
+    public void setInputText(By locator, String text) {
+        getWebElement(locator).clear();
         getWebElement(locator).sendKeys(text);
     }
-
+    public String getPageTitle(){
+        return driver.getTitle();
+    }
     @Override
     public String getElementText(By locator) {
         return getWebElement(locator).getText();

@@ -22,8 +22,8 @@ public abstract class Page {
     public abstract WebElement getWebElement(By locator);
 
     public abstract List<WebElement> getWebElements(By locator);
-    public  abstract  void fillUpTheBox(By locator, String text);
 
+    public abstract void setInputText(By locator, String text);
 
     public abstract String getElementText(By locator);
 
@@ -32,6 +32,8 @@ public abstract class Page {
     public abstract void setWait(By locator);
 
     public abstract String getPageUrl();
+    public abstract String getPageTitle();
+
     //Send a class through parameter , return type page object
     public <T extends BasePage> T goTo(Class<T> pageClass) {
         try {

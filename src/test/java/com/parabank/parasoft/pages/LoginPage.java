@@ -8,6 +8,7 @@ public class LoginPage extends BasePage {
     public LoginPage(WebDriver driver) {
         super(driver);
     }
+
     //After fillup the user name , it will stay this page
     public LoginPage fillUserName(String userName) {
         getWebElement(By.xpath("//input[@name='username']")).sendKeys(userName);
@@ -25,10 +26,11 @@ public class LoginPage extends BasePage {
         clickElement(By.xpath("//input[@value='Log In']"));
         return goTo(OverviewPage.class);
     }
+
     //Error message shows ,after clicking the login button
-    public LoginPage clickLoginButtonAndStay(){
+    public LoginPage clickLoginButtonAndStay() {
         clickElement(By.xpath("//input[@value='Log In']"));
-        return  this;
+        return this;
     }
 
     public CustomerLookupPage clickForgotPassword() {
@@ -44,16 +46,21 @@ public class LoginPage extends BasePage {
 
     //If getting any form then size sould be more than 0, => true
     public boolean isLoginPage() {
+
         return getWebElements(By.cssSelector("form[name='login']")).size() > 0;
     }
 
     //After Login successfully , logout button shown
     public boolean isLogIn() {
+
         return getWebElements(By.cssSelector("a[href='logout.htm']")).size() > 0;
     }
-    //Checking error message 
-    public boolean hasLoginError(){
-        return getWebElements(By.cssSelector("p.error")).size() > 0 ;
+
+    //Checking error message
+    public boolean hasLoginError() {
+
+        return getWebElements(By.cssSelector("p.error")).size() > 0;
     }
+
 
 }
