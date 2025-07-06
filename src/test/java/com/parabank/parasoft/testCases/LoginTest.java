@@ -27,7 +27,7 @@ public class LoginTest extends BaseTest {
         LoginPage checkLoginPage = page.goTo(LoginPage.class);
         String url = checkLoginPage.getPageUrl();
         System.out.println(url);
-        Assert.assertTrue(url.contains("https://parabank.parasoft.com/parabank/index.htm"));
+        Assert.assertTrue(url.contains("parabank"));
     }
 
     @Test

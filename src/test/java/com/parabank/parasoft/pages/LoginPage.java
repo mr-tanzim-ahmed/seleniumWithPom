@@ -58,7 +58,7 @@ public class LoginPage extends BasePage {
 
     //Checking error message
     public boolean hasLoginError() {
-
+        setWait(By.cssSelector("p.error"));
         return getWebElements(By.cssSelector("p.error")).size() > 0;
     }
 
