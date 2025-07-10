@@ -23,7 +23,6 @@ public class BasePage extends Page {
         }
         return element;
     }
-
     @Override
     public List<WebElement> getWebElements(By locator) {
         List<WebElement> elements = null;

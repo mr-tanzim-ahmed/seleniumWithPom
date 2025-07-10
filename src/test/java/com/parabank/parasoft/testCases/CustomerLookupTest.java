@@ -16,5 +16,4 @@ public class CustomerLookupTest extends BaseTest{
         CustomerLookupPage customerLookupPage =  loginPage.clickForgotPassword();
         Assert.assertTrue(customerLookupPage.hasLookupForm(), "Lookup form check");
     }
-
 }
