@@ -19,12 +19,13 @@ public class BaseTest {
     public WebDriver driver;
     Page page;
     private final Properties properties;
-    public BaseTest(){
+
+    public BaseTest() {
         properties = new Properties();
         //user.dir -->> project home directory
-        String path = System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties";
-        
-        try{
+        String path = System.getProperty("user.dir") + "/src/test/resources/config.properties";
+
+        try {
             FileInputStream inputStream = new FileInputStream(path);
             properties.load(inputStream);
         } catch (IOException e) {
@@ -35,7 +36,7 @@ public class BaseTest {
     @BeforeMethod
     public void browserSetup() {
         String browserName = properties.getProperty("browser");
-        switch (browserName.toLowerCase()){
+        switch (browserName.toLowerCase()) {
 
             case "firefox":
                 driver = new FirefoxDriver();
@@ -47,7 +48,7 @@ public class BaseTest {
                 driver = new EdgeDriver();
                 break;
             default:
-                throw new IllegalArgumentException("Unsupported browser! "+browserName);
+                throw new IllegalArgumentException("Unsupported browser! " + browserName);
         }
         driver.manage().window().maximize();
         driver.get(properties.getProperty("baseURL"));
@@ -60,10 +61,12 @@ public class BaseTest {
     public void closeBrowser() {
         driver.quit();
     }
-    public String getUserName(){
+
+    public String getUserName() {
         return properties.getProperty("username");
     }
-    public String getPassword(){
+
+    public String getPassword() {
         return properties.getProperty("password");
     }
 }

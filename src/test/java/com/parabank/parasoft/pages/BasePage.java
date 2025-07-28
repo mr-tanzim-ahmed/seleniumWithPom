@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
@@ -23,6 +24,7 @@ public class BasePage extends Page {
         }
         return element;
     }
+
     @Override
     public List<WebElement> getWebElements(By locator) {
         List<WebElement> elements = null;
@@ -39,14 +41,15 @@ public class BasePage extends Page {
         getWebElement(locator).clear();
         getWebElement(locator).sendKeys(text);
     }
-    public String getPageTitle(){
+
+    public String getPageTitle() {
         return driver.getTitle();
     }
+
     @Override
     public String getElementText(By locator) {
         return getWebElement(locator).getText();
     }
-
 
     @Override
     public void clickElement(By locator) {
@@ -62,4 +65,10 @@ public class BasePage extends Page {
     public void setWait(By locator) {
         wait.until(ExpectedConditions.visibilityOf(getWebElement(locator)));
     }
+
+    @Override
+    public Select getSelect(By locator) {
+        return new Select(getWebElement(locator));
+    }
+
 }

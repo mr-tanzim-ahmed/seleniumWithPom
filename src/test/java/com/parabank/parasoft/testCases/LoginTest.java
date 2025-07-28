@@ -51,13 +51,13 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(loginPage.hasLoginError(), "Login Should fail with only password");
     }
 
-    @Test
+    @Test(enabled = true)
     public void loginShouldSucceed() {
+        // After clicking the login button, goes to Overview Pages
         OverviewPage overviewPage = page.goTo(LoginPage.class)
                 .fillUserName(getUserName())
                 .fillPassword(getPassword())
                 .clickLoginButton();
-
         Assert.assertTrue(overviewPage.hasLogoutButton(), "Overview page after login");
     }
 

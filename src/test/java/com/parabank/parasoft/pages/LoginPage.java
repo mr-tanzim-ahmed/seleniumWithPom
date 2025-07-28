@@ -61,6 +61,12 @@ public class LoginPage extends BasePage {
         setWait(By.cssSelector("p.error"));
         return getWebElements(By.cssSelector("p.error")).size() > 0;
     }
+    public OverviewPage doLogin(String username, String password){
+        // After clicking the login button, goes to (returns) Overview Pages
+        return  fillUserName(username)
+                .fillPassword(password)
+                .clickLoginButton();
+    }
 
 
 }

@@ -11,5 +11,9 @@ public class OverviewPage extends BasePage {
     public boolean hasLogoutButton() {
         return getWebElements(By.cssSelector("a[href='logout.htm']")).size() > 0;
     }
+    public OpenNewAccountPage clickOpenNewAccountButton(){
+        clickElement(By.cssSelector("a[href='openaccount.htm']"));
+        return goTo(OpenNewAccountPage.class);
+    }
 
 }
