@@ -14,4 +14,48 @@ public class RegisterPage extends BasePage {
         setInputText(By.id("customer.firstName"),firstName);
         return  this;
     }
+    public RegisterPage fillLastName(String lastName){
+        setInputText(By.id("customer.lastName"),lastName);
+        return  this;
+    }
+    public RegisterPage fillAddress(String address) {
+        setInputText(By.id("customer.address.street"), address);
+        return this;
+    }
+    public RegisterPage fillCity(String city) {
+        setInputText(By.id("customer.address.city"), city);
+        return this;
+    }
+    public RegisterPage fillState(String state) {
+        setInputText(By.id("customer.address.state"), state);
+        return this;
+    }
+    public RegisterPage fillZipCode(String zipCode) {
+        setInputText(By.id("customer.address.zipCode"), zipCode);
+        return this;
+    }
+    public RegisterPage fillPhoneNumber(String phoneNumber) {
+        setInputText(By.id("customer.phoneNumber"), phoneNumber);
+        return this;
+    }
+    public RegisterPage fillSSN(String ssn) {
+        setInputText(By.id("customer.ssn"), ssn);
+        return this;
+    }
+    public RegisterPage fillUsername(String username) {
+        getWebElement(By.cssSelector("input[name='customer.username']")).sendKeys(username);
+        return this;
+    }
+    public RegisterPage fillPassword(String password) {
+        getWebElement(By.cssSelector("input[name='customer.password']")).sendKeys(password);
+        return this;
+    }
+    public RegisterPage fillConfirmPassword(String confirmPassword) {
+        getWebElement(By.cssSelector("input[name='repeatedPassword']")).sendKeys(confirmPassword);
+        return this;
+    }
+    public OverviewPage clickRegisterButton() {
+        clickElement(By.xpath("//input[@value='Register']"));
+        return goTo(OverviewPage.class);
+    }
 }

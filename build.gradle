@@ -12,7 +12,9 @@ repositories {
 dependencies {
     testImplementation 'org.testng:testng:7.11.0'
 
-    implementation 'org.seleniumhq.selenium:selenium-java:4.32.0'
+    testImplementation 'org.seleniumhq.selenium:selenium-java:4.32.0'
+
+    testImplementation 'com.thedeanda:lorem:2.2'
 }
 
 test {
