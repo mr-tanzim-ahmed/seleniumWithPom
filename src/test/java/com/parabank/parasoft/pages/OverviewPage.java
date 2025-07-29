@@ -15,5 +15,9 @@ public class OverviewPage extends BasePage {
         clickElement(By.cssSelector("a[href='openaccount.htm']"));
         return goTo(OpenNewAccountPage.class);
     }
+    public BillPaymentPage billPayPage(){
+        clickElement(By.cssSelector("a[href='billpay.htm']"));
+        return goTo(BillPaymentPage.class);
+    }
 
 }

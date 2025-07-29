@@ -68,6 +68,8 @@ public class BasePage extends Page {
 
     @Override
     public Select getSelect(By locator) {
+        //General Use: Select select = new Select(driver.findElement(locator);
+        //Returns select object
         return new Select(getWebElement(locator));
     }
 
