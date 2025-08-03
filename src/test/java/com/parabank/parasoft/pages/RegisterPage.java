@@ -58,4 +58,19 @@ public class RegisterPage extends BasePage {
         clickElement(By.xpath("//input[@value='Register']"));
         return goTo(OverviewPage.class);
     }
+    public RegisterPage clickRegisterButtonAndStay(){
+        clickElement(By.xpath("//input[@value='Register']"));
+        return this;
+    }
+    public boolean hasRegistrationError(int errorCount){
+        setWait(By.cssSelector("span[class=error]"));
+        return getWebElements(By.cssSelector("span[class=error]")).size() >= errorCount;
+    }
+    public RegisterPage clickRegisterButtonWithoutFullingForm() {
+        clickElement(By.xpath("//input[@value='Register']"));
+        return this;
+    }
+    public String getFirstNameErrorMessage() {
+        return getElementText(By.xpath("//span[@id='customer.firstName.errors']"));
+    }
 }
