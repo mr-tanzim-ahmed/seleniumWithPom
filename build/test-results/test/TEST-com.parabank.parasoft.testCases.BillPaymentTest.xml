@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.parabank.parasoft.testCases.BillPaymentTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-07-29T14:43:21" hostname="acer" time="4.155">
-  <properties/>
-  <testcase name="billPaymentServiceShouldSucceed" classname="com.parabank.parasoft.testCases.BillPaymentTest" time="4.155"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
