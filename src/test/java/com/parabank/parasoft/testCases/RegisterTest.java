@@ -1,4 +1,5 @@
 package com.parabank.parasoft.testCases;
+
 import com.parabank.parasoft.pages.LoginPage;
 import com.parabank.parasoft.pages.OverviewPage;
 import com.parabank.parasoft.pages.RegisterPage;
@@ -8,17 +9,18 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class RegisterTest extends BaseTest{
+public class RegisterTest extends BaseTest {
     @Test
-    public void checkRegistrationPage(){
+    public void checkRegistrationPage() {
         LoginPage loginPage = page.goTo(LoginPage.class);
         //clickRegister() return type RegistrationPage,
         //After Clicking login button,from LoginPage to goTo RegesiterPage
         RegisterPage registerPage = loginPage.clickRegister();
         Assert.assertTrue(registerPage.hasRegistratioForm());
     }
+
     @Test
-    public void registrationShouldSucceed(){
+    public void registrationShouldSucceed() {
         OverviewPage registrationPage = page.goTo(LoginPage.class)
                 .clickRegister()
                 .fillFirstName(LoremIpsum.getInstance().getFirstName())
@@ -38,7 +40,7 @@ public class RegisterTest extends BaseTest{
 
     //Negative Test Case
     @Test(enabled = true)
-    public void checkBlankFormSubmissionError(){
+    public void checkBlankFormSubmissionError() {
         RegisterPage registerPage = page.goTo(LoginPage.class)
                 .clickRegister()
                 .clickRegisterButtonWithoutFullingForm();
@@ -47,7 +49,7 @@ public class RegisterTest extends BaseTest{
     }
 
     @Test
-    public void firstNameErrorMessageShouldBeDisplayed(){
+    public void firstNameErrorMessageShouldBeDisplayed() {
         RegisterPage registerPage = page.goTo(LoginPage.class)
                 .clickRegister()
                 .clickRegisterButtonWithoutFullingForm();

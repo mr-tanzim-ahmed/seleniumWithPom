@@ -26,9 +26,9 @@ public class OpenNewAccountTest extends BaseTest {
     }
 
     @Test(enabled = true) //alternative
-    public void savingsOpenNewAccountShouldSucceed2(){
+    public void savingsOpenNewAccountShouldSucceed2() {
         AccountOpenedPage openedPage = page.goTo(LoginPage.class)
-                .doLogin(getUserName(),getPassword())
+                .doLogin(getUserName(), getPassword())
                 .clickOpenNewAccountButton()
                 .selectAccountType("SAVINGS")
                 .selectFromAccount(0)

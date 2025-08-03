@@ -1,5 +1,7 @@
 package com.parabank.parasoft.pages;
 
+import com.aventstack.extentreports.Status;
+import com.parabank.parasoft.report.ReportTestManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,8 +20,12 @@ public class BasePage extends Page {
     public WebElement getWebElement(By locator) {
         WebElement element = null;
         try {
+            addInfo("Selenium WebDriver going to find a WebElement with " + locator + " locator");
             element = driver.findElement(locator);
+            addInfo("Selenium WebDriver found a WebElement with " + locator + " locator");
+
         } catch (Exception e) {
+            addFailInfo("Selenium WebDriver is not found a WebElement with "+locator+" locator");
             System.out.println("Element not found: " + locator);
         }
         return element;
@@ -29,8 +35,11 @@ public class BasePage extends Page {
     public List<WebElement> getWebElements(By locator) {
         List<WebElement> elements = null;
         try {
+            addInfo("Selenium WebDriver going to find a WebElements with " + locator + " locator");
             elements = driver.findElements(locator);
+            addInfo("Selenium WebDriver found a WebElements with " + locator + " locator");
         } catch (Exception e) {
+            addFailInfo("Selenium WebDriver is not found  WebElements with "+locator+" locator");
             System.out.printf("Element not found: " + locator);
         }
         return elements;
@@ -71,6 +80,20 @@ public class BasePage extends Page {
         //General Use: Select select = new Select(driver.findElement(locator);
         //Returns select object
         return new Select(getWebElement(locator));
+    }
+
+    //For Report
+    public void addInfo(String message) {
+        if (ReportTestManager.getTest() != null) {
+            ReportTestManager.getTest().log(Status.FAIL, message);
+        }
+    }
+
+    public void addFailInfo(String message) {
+        if (ReportTestManager.getTest() != null) {
+            ReportTestManager.getTest().log(Status.FAIL, message);
+        }
+
     }
 
 }

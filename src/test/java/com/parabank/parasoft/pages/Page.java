@@ -1,5 +1,7 @@
 package com.parabank.parasoft.pages;
 
+import com.aventstack.extentreports.Status;
+import com.parabank.parasoft.report.ReportTestManager;
 import com.parabank.parasoft.util.ParaBankUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -33,6 +35,7 @@ public abstract class Page {
     public abstract void setWait(By locator);
 
     public abstract String getPageUrl();
+
     public abstract String getPageTitle();
 
     public abstract Select getSelect(By locator);

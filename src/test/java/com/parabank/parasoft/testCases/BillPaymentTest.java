@@ -7,12 +7,13 @@ import com.thedeanda.lorem.LoremIpsum;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class BillPaymentTest extends BaseTest{
+public class BillPaymentTest extends BaseTest {
     LoremIpsum loremIpsum = LoremIpsum.getInstance();
+
     @Test
-    public void billPaymentServiceShouldSucceed(){
+    public void billPaymentServiceShouldSucceed() {
         BillPaymentCompletePage billPaymentPage = page.goTo(LoginPage.class)
-                .doLogin(getUserName(),getPassword())
+                .doLogin(getUserName(), getPassword())
                 .clickBillPayPage()
                 .fillPayeeName(loremIpsum.getName())
                 .fillPayeeAddress(loremIpsum.getCity())
