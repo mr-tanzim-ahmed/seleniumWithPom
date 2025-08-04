@@ -1,3 +1,6 @@
 /.idea/
 /.gradle/
 /seleniumWithPom.iml
+/.idea/
+/build/
+/.gradle/
