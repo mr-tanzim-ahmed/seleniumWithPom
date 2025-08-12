@@ -41,4 +41,3 @@ Reporting Library: ExtentReports
             ├── config.properties
             ├── regressionSuite.xml
             └── regressionSuiteWithReport.xml
-
