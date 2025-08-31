@@ -52,6 +52,7 @@ public class BasePage extends Page {
     }
 
     public String getPageTitle() {
+
         return driver.getTitle();
     }
 
