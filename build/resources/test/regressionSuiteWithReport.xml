@@ -11,6 +11,5 @@
             <package name="com.parabank.parasoft.testCases.*">
             </package>
         </packages>
-        <classes/>
     </test>
 </suite>

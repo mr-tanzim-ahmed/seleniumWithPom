@@ -86,7 +86,7 @@ public class BasePage extends Page {
     //For Report
     public void addInfo(String message) {
         if (ReportTestManager.getTest() != null) {
-            ReportTestManager.getTest().log(Status.FAIL, message);
+            ReportTestManager.getTest().log(Status.INFO, message);
         }
     }
 

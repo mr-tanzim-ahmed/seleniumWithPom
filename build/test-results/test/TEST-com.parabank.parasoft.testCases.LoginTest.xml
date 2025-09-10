@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.parabank.parasoft.testCases.LoginTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-09-10T05:47:31" hostname="acer" time="2.739">
+  <properties/>
+  <testcase name="loginShouldSucceed" classname="com.parabank.parasoft.testCases.LoginTest" time="2.739"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Sep 10, 2025 11:47:14 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 140, returning the closest version; found: 136; Please update to a Selenium version that supports CDP version 140
+]]></system-err>
+</testsuite>
