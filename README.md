@@ -10,7 +10,7 @@ Reporting Library: ExtentReports
 build
   ├── extendReport
           └── Report.html
-</code> </pre>\
+</code> </pre>
 ## File Structure:
 <pre> <code> 
   src
