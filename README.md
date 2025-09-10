@@ -5,8 +5,12 @@ Language: Java
 Automation Library:Selenium WebDriver
 Testing Library: TestNG
 Reporting Library: ExtentReports 
-
-#File Structure:
+## Testing report:
+build
+  ├── extendReport
+          └── Report.html
+    
+## File Structure:
 <pre> <code> 
   src
     └── test
