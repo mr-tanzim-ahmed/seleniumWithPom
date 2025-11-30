@@ -9,6 +9,8 @@ public class AccountOpenedPage extends BasePage{
         super(driver);
     }
     public boolean hasAccountOpenedId(){
+
+        //
         return getWebElements(By.xpath("//a[@id='newAccountId']")).size() > 0;
     }
 }
